@@ -13,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	
 </head>
 
 <body>
@@ -26,21 +27,25 @@
 	<main>
 	
 		<div id="LoginContainer">
+		
+			<div id="RegisterLogo">
+				Formularz rejestracji  
+			</div>
+		
 			<form>
 				
 				<input type="text" placeholder="login" onblur="this.placeholder='login'" required>
 				
 				<input type="password" placeholder="hasło" onblur="this.placeholder='hasło'" required>
 				
-				<div class="checkbox"><label><input type="checkbox" name="rememberUser" value="1"> Zapamiętaj użytkownika </label></div>
+				<input type="password" placeholder="potwierdź hasło" onblur="this.placeholder='potwierdź hasło'" required>
 				
-				<input type="submit" value="Zaloguj się">
+				<input type="email" name="adresEmail" placeholder="@ email" onblur="this.placeholder='@ email'" required>
+				
+				<input type="submit" value="Zarejestruj się">
 				
 			</form>
 			
-			<div id="userRegister">
-				Nie masz konta?   <a href="RegisterPage.html">Zarejestruj się.</a>
-			</div>
 		</div>
 		
 	</main>
