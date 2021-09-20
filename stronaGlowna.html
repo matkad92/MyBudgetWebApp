@@ -13,41 +13,46 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> <!--dolaczenie bibliotekiJQuery-->
+	<script src="slider.js"></script>
+	
 </head>
 
-<body>
+<body >
 
 	<header>
+	
 		<div id="topBar">
-			<h1 class="logo"><i class="icon-money"></i>Witaj w aplikacji MyBudget!</h1>
+			<!--<div id="sessionTime">16:02:22</div>-->
+			<h1 class="logo"><i class="icon-money"></i>Strona główna</h1>
 		</div>
 	</header>
 	
 	<main>
 	
-		<div id="LoginContainer">
-			<form>
-				
-				<input type="text" placeholder="login" onblur="this.placeholder='login'" >
-				
-				<input type="password" placeholder="hasło" onblur="this.placeholder='hasło'" >
-				
-				<div class="checkbox"><label><input type="checkbox" name="rememberUser" value="1"> Zapamiętaj użytkownika </label></div>
-				
-				<input type="submit" value="Zaloguj się">
-				
-			</form>
+		<div id="MainContainer">
+			<section>
+				<div>
+					<h1 class="mainMessage">Witaj uzytkowniku "NAZWA ZALOGOWANEGO UZYTKOWNIKA"</h1>
+				</div>
+			</section>
 			
-			<div id="userRegister">
-				Nie masz konta?   <a href="register.html">Zarejestruj się.</a>
-			</div>
+			<section>
+				<div id="MainPageGallery" >
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique consequat augue, 
+					et dignissim risus aliquam id. Cras erat eros, venenatis sed tristique rhoncus, aliquam ac orci. Pellentesque quis imperdiet leo, 
+					nec tempor arcu. Nunc commodo felis at magna efficitur, nec commodo mi imperdiet. In commodo mollis quam.
+					Maecenas tincidunt consectetur metus, ut consequat ligula. "
+				</div>
+			</section>
 		</div>
 		
 	</main>
 	
 	<footer>
 		
-		<div class="infoBarSingle">
+		<div class="infoBar">
 			Wszelkie prawa zastrzeżone &copy; 2021 Dziękuję za wizytę!
 		</div>
 	

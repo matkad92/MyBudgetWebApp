@@ -1,8 +1,9 @@
 body
 {
-	background-image: url("img/tlo3.png");	
+	background-image: url("img/tlo4.png");	
 	font-size: 20px;
 	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #topBar
@@ -14,9 +15,32 @@ body
 
 }
 
+#sessionTime
+{
+	text-align: right;
+	padding-right: 15px;
+	padding-top: 5px;
+	color: #00008B;
+}
+
 .infoBar
 {
-	background-color: #6495ED;
+	background-color: #0066cc;
+	/*position: absolute;
+	bottom: 0;*/
+	margin-top: 100px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	color: #00008B;
+    font-family: 'Josefin Sans', sans-serif;
+	
+}
+
+.infoBarSingle
+{
+	background-color: #0066cc;
 	position: absolute;
 	bottom: 0;
 	text-align: center;
@@ -24,7 +48,7 @@ body
 	padding-bottom: 10px;
 	width: 100%;
 	color: #00008B;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 	
 }
 
@@ -32,13 +56,37 @@ h1.logo
 {
 	font-size: 44px;
 	font-weight: 700;
-	color: #ddd;
 	text-align: center;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	letter-spacing: 5px;
 	color: #00008B;
-    font-family: 'Open Sans', sans-serif;
-    
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1.mainMessage
+{
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	color: #00008B;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#MainPageGallery
+{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 40px;	
+	background-image: url("img/slajd1.jpg");
+	width: 420px;
+	height: 220px;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: center;
+	color: black;
+	font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+	
 }
 
 #LoginContainer
@@ -49,6 +97,22 @@ h1.logo
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
+	
+	-webkit-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
+	box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5);
+	-moz-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
+	/* box shadow generator*/
+}
+
+#MainContainer
+{
+	background-color: #6495ED;
+	width: 1000px;
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
 	
 	-webkit-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
 	box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5);
@@ -95,6 +159,7 @@ input[type=submit]
 	cursor: pointer;/*ustawia kursor na łapke po najechaniu*/
 	letter-spacing: 2px;
 	outline: none;/*wylaczamy zewnetrzna obwodke*/
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #userRegister
@@ -118,7 +183,7 @@ input[type=submit]
 .checkbox > label
 {
 	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 
 }
 
