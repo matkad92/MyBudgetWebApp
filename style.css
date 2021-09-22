@@ -1,6 +1,6 @@
 body
 {
-	background-image: url("img/tlo4.png");	
+	background-color: #cccccc;
 	font-size: 20px;
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
@@ -9,16 +9,24 @@ body
 #topBar
 {
 	margin-bottom: 0px;
-	background-color: #6495ED;
+	background-image: url("img/tlo4.png");
 	padding-top: 1px;
 	padding-bottom: 1px;
-
+	text-shadow: #FFFCA8 2px 2px 0px, #9C9C9C 4px 4px 0px, 2px 2px 2px rgba(112,108,9,0);
+	border: 1px solid #3D3F53;
 }
 
 #topnav
 {
-	background-color: #0066cc;
+	background-color: #A7A8BE;
+	font-weight: 700;
 	text-align: center;
+	text-shadow: #e0e0e0 1px 1px 0;
+	border: 1px solid #3D3F53;
+}
+
+.myfont {
+  font-family: entypo-fontello;
 }
 
 .menu
@@ -55,52 +63,6 @@ body
 	color: #0a2b42;
 }
 
-#sessionTime
-{
-	text-align: right;
-	padding-right: 15px;
-	padding-top: 5px;
-	color: #00008B;
-}
-
-#LoginContainer
-{
-	text-align: center;
-	padding: 10px;
-	padding-top: 5px;
-	color: #00008B;
-	font-size: 30px;
-}
-
-.infoBar
-{
-	background-color: #0066cc;
-	/*position: absolute;
-	bottom: 0;*/
-	margin-top: 100px;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 100%;
-	color: #00008B;
-    font-family: 'Josefin Sans', sans-serif;
-	
-}
-
-.infoBarSingle
-{
-	background-color: #0066cc;
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 100%;
-	color: #00008B;
-    font-family: 'Josefin Sans', sans-serif;
-	
-}
-
 h1.logo
 {
 	font-size: 44px;
@@ -114,64 +76,176 @@ h1.logo
 
 h1.mainMessage
 {
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 700;
 	text-align: center;
 	color: #00008B;
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.chooseDate
+{
+	margin-left: 400px;
+	margin right: 0px;
+	color: #00008B;
+}
+
+#BalanceTitle
+{
+	margin-bottom: 30px;
+	text-align: left;
+	color: #00008B;
+	margin-left: 30px;
+
+}
+
 #MainPageGallery
 {
-	margin-left: auto;
-	margin-right: auto;
-	padding: 40px;	
-	background-image: url("img/slajd1.jpg");
-	width: 420px;
-	height: 220px;
+	
+	background-image: url("img/tlo4.png");
+	border-radius: 4px;
+	width: 400px;
+	height: 300px;
 	font-size: 20px;
 	font-weight: 400;
 	text-align: center;
 	color: black;
 	font-weight: 700;
     font-family: 'Josefin Sans', sans-serif;
+	border: 1px solid #3D3F53;
+	float: left;
 	
+}
+
+#BalanceGallery
+{
+	background-color: yellow;
+	width: 800px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#DlaczegoOszczedzac
+{
+	float: left;
+	width: 400px;
+	height: 300px;
+	margin-left: 45px;
+	color: white;
+	
+
 }
 
 #LoginContainer
 {
-	background-color: #6495ED;
+	text-align: center;
+	padding: 10px;
+	padding-top: 5px;
+	color: #00008B;
+	font-size: 30px;
+	
+	background-image: url("img/tlo4.png");
 	width: 300px;
 	padding: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
+	border-radius: 15px;
 	
-	-webkit-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
-	box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5);
-	-moz-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
+	-webkit-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5);
+	-moz-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	border: 1px solid #3D3F53;
 	/* box shadow generator*/
+}
+
+
+#AddingContainer
+{
+	text-align: left;
+	padding: 10px;
+	padding-top: 5px;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 50px;
+	
+	background-image: url("img/tlo4.png");
+	width: 300px;
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	border-radius: 15px;
+	
+	-webkit-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5);
+	-moz-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	border: 1px solid #3D3F53;
+	/* box shadow generator*/
+}
+
+#RegisterContainer
+{
+	text-align: center;
+	padding: 0px;
+	padding-top: 10px;
+	color: #00008B;
+	font-size: 30px;
+	
+	background-image: url("img/tlo4.png");
+	width: 300px;
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	border-radius: 15px;
+	
+	-webkit-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5);
+	-moz-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	border: 1px solid #3D3F53;
+	/* box shadow generator*/
+}
+
+#AddingLogo
+{
+	text-align: center;
+	color: #00008B;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
+#MainPageButtons
+{
+	margin-top: 20px;
+	text-align: center;
 }
 
 #MainContainer
 {
-	background-color: #6495ED;
-	width: 1000px;
+	background-image: url("img/tlo4.png");
+	width: 850px;
 	padding: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
 	margin-bottom: 100px;
+	border: 1px solid #3D3F53;
+	border-radius: 15px;
 	
-	-webkit-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
-	box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5);
-	-moz-box-shadow: 0px 10px 2px -7px #000000, -1px -1px 0px 0px rgba(100,149,237,0.5); 
+	-webkit-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
+	box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5);
+	-moz-box-shadow: 0px 10px 2px -7px #000000, 0px 0px 0px 0px rgba(100,149,237,0.5); 
 	/* box shadow generator*/
 }
 
 input[type=text],/* określamy jaki input, mozna tez przydzielic klasę*/
 input[type=password],
-input[type=email]
+input[type=email],
+input[type=date],
+textarea[id=komentarz],
+select
 {
 	width: 300px;
 	background-color: #efefef;
@@ -182,12 +256,15 @@ input[type=email]
 	padding: 10px;
 	box-sizing: border-box;/* wymusza szerokosc jaka ma pilnowac przegladarka, zeby pola edycyjne nie byly dluzsze od pola submi*/
 	outline: none;
-	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 input[type=text]:focus,
 input[type=password]:focus,
-input[type=email]:focus
+input[type=email]:focus,
+input[type=date]:focus,
+textarea[id=komentarz]:focus,
+select:focus
 {
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(13,19,255,0);
 	-moz-box-shadow: 0px 0px 10px 2px rgba(13,19,255,0);
@@ -195,6 +272,60 @@ input[type=email]:focus
 	border: 2px solid #1a1aff;
 	background-color: #e9f3e9;
 	color: #000033;/*dla czcionki*/
+}
+
+input[type=submit]
+{
+	width: 300px;
+	background-color: #00008B;
+	font-size:20px;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;/*ustawia kursor na łapke po najechaniu*/
+	letter-spacing: 2px;
+	outline: none;/*wylaczamy zewnetrzna obwodke*/
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#Zaloguj
+{
+	background-color: #00cc00;
+}
+
+#dodaj
+{
+	width: 140px;
+	background-color: #00cc00;
+	margin-right: 10px;
+}
+
+#dodaj:hover
+{	
+	background-color: #006600;
+}
+
+#anuluj
+{
+	width: 140px;
+	background-color: #e60000;
+}
+
+#anuluj:hover
+{
+	background-color: #990000;
+}
+
+#Zarejestruj
+{
+	margin-left: 150px;
+}
+
+#Zaloguj:hover
+{
+	background-color: #006600;
 }
 
 input[type=submit]

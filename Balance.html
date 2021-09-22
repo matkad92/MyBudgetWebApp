@@ -14,12 +14,17 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 	
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> <!--dolaczenie bibliotekiJQuery-->
+	<script src="slider.js"></script>
+	
 </head>
 
-<body>
+<body >
 
 	<header>
+	
 		<div id="topBar">
+			<!--<div id="sessionTime">16:02:22</div>-->
 			<h1 class="logo"><i class="icon-money"></i>MyBudget.pl</h1>
 		</div>
 		
@@ -40,39 +45,41 @@
 	
 	<main>
 	
-		<div id="AddingContainer">
-		
-			<div id="AddingLogo">
-				Dodawanie przychodu 
-				
-			</div>
-		
-			<form class="adding">
-				
-				<label> Kwota: <input type="text" placeholder="1000zł" onblur="this.placeholder='1000zł'" required></label> 
-				<label> Data: <input type="date" name="date" placeholder="data" onblur="this.placeholder='data'" required></label> 
-				<label for="category"> Kategoria: </label>
-					<select id="category" name="category">
-					
-						<option value="1">kategoria1</option>
-						<option value="2" selected>wypłata</option>
-						<option value="3">kategoria3</option>
-					
-					</select> 
-				<label> Komentarz: <textarea name="komentarz" id="komentarz" rows="4" cols="39" maxlength="100" minlength="0"></textarea></label> 
-				
-
-				
-				<input type="submit"  id="dodaj" value="Dodaj"> 
-				
-				<input type="submit"  id="anuluj" value="Anuluj">
-				
-			</form>
+		<div id="MainContainer">
+						
+			<section>
 			
+				<form class="chooseDate">
+					
+					<label for="Period"> Wybierz okres: </label>
+						<select id="period" name="period">
+						
+							<option value="1"selected>Bieżący miesiąc</option>
+							<option value="2" >Poprzedni miesiąc</option>
+							<option value="3">Niestandardowy okres</option>
+						
+						</select>
+					<!--<label> Od: <input type="date" name="date" placeholder="data" onblur="this.placeholder='data'" required></label> 
+					<label> Do: <input type="date" name="date" placeholder="data" onblur="this.placeholder='data'" required></label> -->
+
+					
+				</form>
+				
+				<div id="BalanceTitle">
+					<h1 ><i class="icon-balance-scale"></i> Bilans - miesiąc bieżący</h1>
+				</div>
+			
+				<div id="BalanceGallery" >
+					 Div z wykresami i tabelami, kolor będzie przeźroczysty
+				</div>
+				
+				
+				
+			</section>
 		</div>
 		
 	</main>
-	
+
 	
 </body>
 </html>
