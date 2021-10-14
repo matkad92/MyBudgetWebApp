@@ -1,6 +1,5 @@
 bin/
 obj/
 plan/
-img/
 *.txt
 *.xml
