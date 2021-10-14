@@ -1,0 +1,21 @@
+body
+{
+	background-color: #cccccc;
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.mainPagePicture
+{
+	max-width: 400px;
+	height: auto;
+}
+
+.mainPageContent
+{
+	max-width: 400px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
