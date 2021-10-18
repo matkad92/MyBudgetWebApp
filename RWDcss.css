@@ -19,3 +19,8 @@ body
 	margin-right: auto;
 }
 
+#mainPageContainer
+{
+	max-width: 900px;
+}
+
