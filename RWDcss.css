@@ -24,3 +24,21 @@ body
 	max-width: 900px;
 }
 
+#addIncomeContainer
+{
+	max-width: 500px;
+}
+
+.addIncomeButtons
+{
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+#addIncomeButtonsContainer
+{
+	margin-bottom: 60px;
+	justify-content: center;
+}
