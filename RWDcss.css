@@ -19,9 +19,17 @@ body
 	margin-right: auto;
 }
 
+.balancePageContent
+{
+	max-width: 420px !important;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #mainPageContainer
 {
-	max-width: 900px;
+	max-width: 950px;
 }
 
 #addIncomeContainer
@@ -47,4 +55,9 @@ body
 {
 	max-width: 300px;
 	float:right;
+}
+
+.balanceButtons
+{
+	min-width: 220px;
 }

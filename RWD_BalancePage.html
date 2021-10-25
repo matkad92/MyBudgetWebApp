@@ -20,6 +20,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	
+	
 </head>
 
 <body>
@@ -80,37 +81,76 @@
 						
 			<section>
 			
-				<div id="chooseDate">
-					<label for="category" class="form-label">Wybierz kategorię:</label>
-					<select class="form-select form-select-md mt-0 mb-3" id="category">
-						 <option>Bieżący miesiąc</option>
-						 <option>Poprzedni miesiąc</option>
-						 <option data-toggle="modal" data-target="#exampleModal">Wybrany okres</option>
-					</select>
+								
+				<div class="row  g-3 mt-4 mb-4">
+			
+					<div class="col-md-4 text-center">
+																
+						<button type="button" class="btn btn-lg btn-primary btn-block balanceButtons">Bieżący miesiąc</button>
+
+					</div>		
+					
+					<div class="col-md-4 g-3 text-center">
+																			
+						<button type="button" class="btn btn-lg btn-primary btn-block balanceButtons">Poprzedni miesiąc</button>					
+				
+					</div>
+					
+					<div class="col-md-4 g-3 text-center">
+																			
+						<button id="toggleModal" type="button" class="btn btn-lg btn-primary btn-block balanceButtons">Wybrany okres</button>					
+				
+					</div>
+					
 				</div>
 				
 				
-				
-				
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-					<div class="modal-content">
-					  <div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						  <span aria-hidden="true">&times;</span>
-						</button>
-					  </div>
-					  <div class="modal-body">
-						...
-					  </div>
-					  <div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+				 <div
+					  class="modal fade"
+					  id="exampleModal"
+					  tabindex="-1"
+					  role="dialog"
+					  aria-labelledby="exampleModalLabel"
+					  aria-hidden="true"
+					>
+					  <div class="modal-dialog">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<h4 class="modal-title" id="exampleModalLabel">Wybierz datę:</h4>
+							<button
+							  type="button"
+							  class="close"
+							  data-dismiss="modal"
+							  aria-label="Close"
+							>
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body">
+							  <form action="/action_page.php">
+								<div class="form mt-3 mb-3">
+								  <label class="text-left" for="date">Od:</label>
+								  <input type="date" class="form-control" id="date" placeholder="Podaj datę" name="incomeDate">
+								 </div>
+								<div class="form mt-3 mb-3">
+								  <label for="date">Do:</label>
+								  <input type="date" class="form-control" id="date" placeholder="Podaj datę" name="incomeDate">
+								 </div>
+							</form>
+						  </div>
+						  <div class="modal-footer">
+							<button
+							  type="button"
+							  class="btn btn-secondary"
+							  data-dismiss="modal"
+							>
+							  Anuluj
+							</button>
+							<button type="button" class="btn btn-primary">Wybierz</button>
+						  </div>
+						</div>
 					  </div>
 					</div>
-				  </div>
-				</div>
 				
 				
 				
@@ -122,15 +162,19 @@
 			
 			
 			
-				<div class="row mt-3 ml-2 gy-3" >
+				<div class="row mt-2 gy-3" >
 				
-					<div class="col-lg-6">
-						 <img class="rounded mainPagePicture" src="img/tlo1.jpg" alt="Nie można wyświetlić obrazu">
+					<div class="balancePageContent col-lg-6 rounded border border-2 border-primary">
+						<div class="balancePageContent">
+							<h2>Przychody</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+						</div>
 					</div>
 					
-					<div class="col-lg-6">
-						<div class="mainPageContent">
-							<h2>Dlaczego warto?</h2>
+					<div class="balancePageContent col-lg-6 rounded border border-2 border-primary">
+						<div class="balancePageContent">
+							<h2>Wydatki</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
 						</div>
@@ -139,28 +183,14 @@
 									
 				</div>
 									
-				<div class="row mt-4">
-			
-					<div class="col text-center">
-																
-						<button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-logout"></i> Zaloguj się</button>
-
-					</div>		
-					
-					<div class="col text-center">
-																			
-						<button type="button" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
-				
-					</div>
-					
-				</div>
 				
 			</section>
 			
 		</div>
 		
 	</main>
-
+	
+	<script src="./app.js"></script>
 	
 </body>
 
