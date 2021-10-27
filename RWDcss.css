@@ -1,0 +1,63 @@
+body
+{
+	background-color: #cccccc;
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.mainPagePicture
+{
+	max-width: 400px;
+	height: auto;
+}
+
+.mainPageContent
+{
+	max-width: 400px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.balancePageContent
+{
+	max-width: 420px !important;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#mainPageContainer
+{
+	max-width: 950px;
+}
+
+#addIncomeContainer
+{
+	max-width: 500px;
+}
+
+.addIncomeButtons
+{
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+#addIncomeButtonsContainer
+{
+	margin-bottom: 60px;
+	justify-content: center;
+}
+
+#chooseDate
+{
+	max-width: 300px;
+	float:right;
+}
+
+.balanceButtons
+{
+	min-width: 220px;
+}
