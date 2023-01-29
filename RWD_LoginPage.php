@@ -25,7 +25,6 @@
 <body>
 
 	<header>
-	
 		<section>
 			<div class="container-fluid p-3 bg-primary text-white text-center">
 				<h1 class="logo"><i class="icon-money"></i>MyBudget.pl</h1>
@@ -38,48 +37,41 @@
 			</div>
 		</section>
 		
+		
+		
 	</header>
 	
 	<main>
 	
-		<div id="mainPageContainer" class="container-md p-4 mt-5 text-dark bg-light text-center rounded border border-4 border-primary">
-						
-			<section>
-				<div class="row mt-3 ml-2 gy-3" >
+		<div id="addIncomeContainer" class="container mt-5 mb-5 p-4 bg-light navbar-light rounded border border-4 border-primary">
+		  <h2><i class="icon-lock"></i> Logowanie użytkownika</h2>
+		  
+		  <form action="/action_page.php">
+			<div class="form-floating mb-3 mt-3">
+			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
+			  <label for="login">Login</label>
+			</div>
+			<div class="form-floating mt-3 mb-3">
+			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword">
+			  <label for="password">Hasło</label>
+			</div>
 				
-					<div class="col-lg-6">
-						 <img class="rounded mainPagePicture" src="img/tlo1.jpg" alt="Nie można wyświetlić obrazu">
-					</div>
-					
-					<div class="col">
-						<div class="mainPageContent">
-							<h2>Dlaczego warto?</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-						</div>
-					</div>
-					
-									
-				</div>
-									
-				<div class="row mt-4">
-			
-					<div class="col text-center">
-																
-						<button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-logout"></i> Zaloguj się</button>
-
-					</div>		
-					
-					<div class="col text-center">
+			<div class="form-check mb-3">
+				<input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
+				<label class="form-check-label">Zapamiętaj użytkownika</label>
+			</div>
+				
+			<div class="row mb-3">
+				<div class="col text-center">
 																			
-						<button type="button" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
+						<button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-login"></i> Zaloguj się</button>					
 				
-					</div>
-					
 				</div>
-				
-			</section>
-			
+			</div>
+			<div id="userRegister">
+				Nie masz konta?   <a href="RWD_RegisterPage.php">Zarejestruj się.</a>
+			</div>
+		  </form>
 		</div>
 		
 	</main>
