@@ -44,7 +44,7 @@
 		<div id="addIncomeContainer" class="container mt-5 mb-5 p-4 bg-light navbar-light rounded border border-4 border-primary">
 		  <h2><i class="icon-user"></i> Formularz rejestracji</h2>
 		  
-		  <form action="/action_page.php">
+		  <form action="register.php" method="post">
 			<div class="form-floating mb-3 mt-3">
 			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
 			  <label for="login">Login</label>
