@@ -22,6 +22,11 @@
 	
 </head>
 
+<?php
+
+	session_start();
+?>
+
 <body>
 
 	<header>
@@ -49,6 +54,14 @@
 			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
 			  <label for="login">Login</label>
 			</div>
+			<?php
+
+				if(isset($_SESSION['e_nick']))
+				{					
+					echo '<div class="text-danger">'.$_SESSION['e_nick'].'</div>';
+					unset ($_SESSION['e_nick']);
+				}
+			?>
 			<div class="form-floating mt-3 mb-3">
 			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword">
 			  <label for="password">Hasło</label>
@@ -65,7 +78,7 @@
 			<div class="row">
 				<div class="col text-center">
 																			
-						<button type="button" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
+						<button type="submit" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
 				
 				</div>
 			</div>
