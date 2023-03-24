@@ -54,6 +54,7 @@
 			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
 			  <label for="login">Login</label>
 			</div>
+
 			<?php
 
 				if(isset($_SESSION['e_nick']))
@@ -61,22 +62,66 @@
 					echo '<div class="text-danger">'.$_SESSION['e_nick'].'</div>';
 					unset ($_SESSION['e_nick']);
 				}
+				if(isset($_SESSION['e_nickMissing']))
+				{					
+					echo '<div class="text-danger">'.$_SESSION['e_nickMissing'].'</div>';
+					unset ($_SESSION['e_nickMissing']);
+				}
+
 			?>
+
 			<div class="form-floating mt-3 mb-3">
 			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword">
 			  <label for="password">Hasło</label>
 			</div>
+
+			<?php
+
+			if(isset($_SESSION['e_password']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_password'].'</div>';
+				unset ($_SESSION['e_password']);
+			}
+
+			if(isset($_SESSION['e_passwordEmpty']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_passwordEmpty'].'</div>';
+				unset ($_SESSION['e_passwordEmpty']);
+			}
+			?>
+
+			
+
 			<div class="form-floating mt-3 mb-3">
 			  <input type="password" class="form-control" id="repeatPassword" placeholder="Podaj hasło" name="userPasswordConfirmation">
 			  <label for="repeatPassword">Powtórz hasło</label>
 			</div>
+
+			<?php
+
+			if(isset($_SESSION['e_passwordMissing']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_passwordMissing'].'</div>';
+				unset ($_SESSION['e_passwordMissing']);
+			}
+			?>
+
 			<div class="form-floating mt-3 mb-3">
 			  <input type="email" class="form-control" id="email" placeholder="Podaj email" name="userEmail">
 			  <label for="email">@ Podaj email</label>
 			</div>
 
-			<div class="row">
-				<div class="col text-center">
+			<?php
+
+			if(isset($_SESSION['e_email']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_email'].'</div>';
+				unset ($_SESSION['e_email']);
+			}
+			?>
+
+			<div class="row ">
+				<div class="col text-center mt-3">
 																			
 						<button type="submit" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
 				
