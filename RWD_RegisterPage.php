@@ -22,6 +22,11 @@
 	
 </head>
 
+<?php
+
+	session_start();
+?>
+
 <body>
 
 	<header>
@@ -36,38 +41,91 @@
 				
 			</div>
 		</section>
-		
-		
-		
+
 	</header>
 	
 	<main>
 	
 		<div id="addIncomeContainer" class="container mt-5 mb-5 p-4 bg-light navbar-light rounded border border-4 border-primary">
-		  <h2><i class="icon-lock"></i> Logowanie użytkownika</h2>
+		  <h2><i class="icon-user"></i> Formularz rejestracji</h2>
 		  
-		  <form action="/action_page.php">
+		  <form action="register.php" method="post">
 			<div class="form-floating mb-3 mt-3">
 			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
 			  <label for="login">Login</label>
 			</div>
+
+			<?php
+
+				if(isset($_SESSION['e_nick']))
+				{					
+					echo '<div class="text-danger">'.$_SESSION['e_nick'].'</div>';
+					unset ($_SESSION['e_nick']);
+				}
+				if(isset($_SESSION['e_nickMissing']))
+				{					
+					echo '<div class="text-danger">'.$_SESSION['e_nickMissing'].'</div>';
+					unset ($_SESSION['e_nickMissing']);
+				}
+
+			?>
+
 			<div class="form-floating mt-3 mb-3">
 			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword">
 			  <label for="password">Hasło</label>
 			</div>
-			<div class="form-check mb-3">
-			  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
-			  <label class="form-check-label">Zapamiętaj użytkownika</label>
+
+			<?php
+
+			if(isset($_SESSION['e_password']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_password'].'</div>';
+				unset ($_SESSION['e_password']);
+			}
+
+			if(isset($_SESSION['e_passwordEmpty']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_passwordEmpty'].'</div>';
+				unset ($_SESSION['e_passwordEmpty']);
+			}
+			?>
+
+			
+
+			<div class="form-floating mt-3 mb-3">
+			  <input type="password" class="form-control" id="repeatPassword" placeholder="Podaj hasło" name="userPasswordConfirmation">
+			  <label for="repeatPassword">Powtórz hasło</label>
 			</div>
-			<div class="row mb-3">
-				<div class="col text-center">
+
+			<?php
+
+			if(isset($_SESSION['e_passwordMissing']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_passwordMissing'].'</div>';
+				unset ($_SESSION['e_passwordMissing']);
+			}
+			?>
+
+			<div class="form-floating mt-3 mb-3">
+			  <input type="email" class="form-control" id="email" placeholder="Podaj email" name="userEmail">
+			  <label for="email">@ Podaj email</label>
+			</div>
+
+			<?php
+
+			if(isset($_SESSION['e_email']))
+			{					
+				echo '<div class="text-danger">'.$_SESSION['e_email'].'</div>';
+				unset ($_SESSION['e_email']);
+			}
+			?>
+
+			<div class="row ">
+				<div class="col text-center mt-3">
 																			
-						<button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-login"></i> Zaloguj się</button>					
+						<button type="submit" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
 				
 				</div>
-			</div>
-			<div id="userRegister">
-				Nie masz konta?   <a href="RWD_RegisterPage.html">Zarejestruj się.</a>
 			</div>
 		  </form>
 		</div>

@@ -66,13 +66,13 @@
 			
 					<div class="col text-center">
 																
-						<button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-logout"></i> Zaloguj się</button>
+						<a href="RWD_LoginPage.php"><button type="button" class="btn btn-lg btn-success btn-block"><i class="icon-logout"></i> Zaloguj się</button></a>
 
 					</div>		
 					
 					<div class="col text-center">
 																			
-						<button type="button" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button>					
+						<a href="RWD_RegisterPage.php"><button type="button" class="btn btn-lg btn-warning btn-block"><i class="icon-user"></i> Zarejestruj się</button></a>				
 				
 					</div>
 					
