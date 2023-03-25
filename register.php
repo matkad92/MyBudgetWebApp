@@ -22,7 +22,7 @@
         {
             unset ($_SESSION['e_nick']);
             $validRegister = false;
-            $_SESSION['e_nickMissing'] = "Wprowadź nick";
+            $_SESSION['e_nickMissing'] = "Wprowadź login";
         }
 
         //checking password
