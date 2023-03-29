@@ -80,7 +80,18 @@
         if ($howManyUsersWithTheSameLogin > 0)
         {
             $validRegister = false;
-            $_SESSION['e_nick'] = "istnieje już użytkownik o podanym loginie";
+            $_SESSION['e_nick'] = "Istnieje już użytkownik o podanym loginie";
+        }
+
+        $isEmailInDatabaseQuery = $db->prepare('SELECT id FROM users WHERE email =:mail');
+        $isEmailInDatabaseQuery->bindValue(':mail', $email, PDO::PARAM_STR);
+        $isEmailInDatabaseQuery->execute();
+
+        $howManyUsersWithTheSameEmail = $isEmailInDatabaseQuery->rowCount();
+        if ($howManyUsersWithTheSameLogin > 0)
+        {
+            $validRegister = false;
+            $_SESSION['e_email'] = "Istnieje już użytkownik o podanym adresie e-mail";
         }
 
         //testfield
