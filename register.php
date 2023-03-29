@@ -65,7 +65,27 @@
             $_SESSION['e_email'] = "Podaj poprawny adres e-mail!";
         }
 
-        
+        //remember input
+        $_SESSION['input_login'] = $userLogin;
+        $_SESSION['input_email'] = $email;
+        $_SESSION['input_password'] = $password;
+        $_SESSION['input_password_conf'] = $passwordConfirmation;
+        //chcecking if login or email already exists in db
+        require_once 'database.php';
+        $isLoginInDatabaseQuery = $db->prepare('SELECT id FROM users WHERE username =:login');
+        $isLoginInDatabaseQuery->bindValue(':login', $userLogin, PDO::PARAM_STR);
+        $isLoginInDatabaseQuery->execute();
+
+        $howManyUsersWithTheSameLogin = $isLoginInDatabaseQuery->rowCount();
+        if ($howManyUsersWithTheSameLogin > 0)
+        {
+            $validRegister = false;
+            $_SESSION['e_nick'] = "istnieje już użytkownik o podanym loginie";
+        }
+
+        //testfield
+        $_SESSION['test'] = $isLoginInDatabaseQuery->rowCount();
+
 
         header('Location: RWD_RegisterPage.php');
 

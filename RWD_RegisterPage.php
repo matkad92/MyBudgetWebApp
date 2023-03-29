@@ -51,7 +51,15 @@
 		  
 		  <form action="register.php" method="post">
 			<div class="form-floating mb-3 mt-3">
-			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin">
+			  <input type="text" class="form-control" id="login" placeholder="Podaj login:" name="userLogin" 
+			  value="<?php
+					if(isset($_SESSION['input_login'])) 
+					{
+						echo $_SESSION['input_login'];
+						unset($_SESSION['input_login']);
+					}
+				?>"
+			  >
 			  <label for="login">Login</label>
 			</div>
 
@@ -71,7 +79,15 @@
 			?>
 
 			<div class="form-floating mt-3 mb-3">
-			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword">
+			  <input type="password" class="form-control" id="password" placeholder="Podaj hasło" name="userPassword"
+			  value="<?php
+					if(isset($_SESSION['input_password'])) 
+					{
+						echo $_SESSION['input_password'];
+						unset($_SESSION['input_password']);
+					}
+				?>"
+			  >
 			  <label for="password">Hasło</label>
 			</div>
 
@@ -93,7 +109,15 @@
 			
 
 			<div class="form-floating mt-3 mb-3">
-			  <input type="password" class="form-control" id="repeatPassword" placeholder="Podaj hasło" name="userPasswordConfirmation">
+			  <input type="password" class="form-control" id="repeatPassword" placeholder="Podaj hasło" name="userPasswordConfirmation"
+			  value="<?php
+					if(isset($_SESSION['input_password_conf'])) 
+					{
+						echo $_SESSION['input_password_conf'];
+						unset($_SESSION['input_password_conf']);
+					}
+				?>"
+			  >
 			  <label for="repeatPassword">Powtórz hasło</label>
 			</div>
 
@@ -107,7 +131,15 @@
 			?>
 
 			<div class="form-floating mt-3 mb-3">
-			  <input type="email" class="form-control" id="email" placeholder="Podaj email" name="userEmail">
+			  <input type="email" class="form-control" id="email" placeholder="Podaj email" name="userEmail"
+			  value="<?php
+					if(isset($_SESSION['input_email'])) 
+					{
+						echo $_SESSION['input_email'];
+						unset($_SESSION['input_email']);
+					}
+				?>"
+			  >
 			  <label for="email">@ Podaj email</label>
 			</div>
 
@@ -128,6 +160,13 @@
 				</div>
 			</div>
 		  </form>
+				<?php
+				if(isset($_SESSION['test']))
+				{					
+					echo '<div class="text-danger">'.$_SESSION['test'].'</div>';
+					unset ($_SESSION['test']);
+				}
+				?>
 		</div>
 		
 	</main>
