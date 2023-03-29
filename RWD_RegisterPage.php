@@ -96,13 +96,13 @@
 			if(isset($_SESSION['e_password']))
 			{					
 				echo '<div class="text-danger">'.$_SESSION['e_password'].'</div>';
-				unset ($_SESSION['e_password']);
+				unset($_SESSION['e_password']);
 			}
 
 			if(isset($_SESSION['e_passwordEmpty']))
 			{					
 				echo '<div class="text-danger">'.$_SESSION['e_passwordEmpty'].'</div>';
-				unset ($_SESSION['e_passwordEmpty']);
+				unset($_SESSION['e_passwordEmpty']);
 			}
 			?>
 
@@ -126,7 +126,7 @@
 			if(isset($_SESSION['e_passwordMissing']))
 			{					
 				echo '<div class="text-danger">'.$_SESSION['e_passwordMissing'].'</div>';
-				unset ($_SESSION['e_passwordMissing']);
+				unset($_SESSION['e_passwordMissing']);
 			}
 			?>
 
@@ -148,7 +148,7 @@
 			if(isset($_SESSION['e_email']))
 			{					
 				echo '<div class="text-danger">'.$_SESSION['e_email'].'</div>';
-				unset ($_SESSION['e_email']);
+				unset($_SESSION['e_email']);
 			}
 			?>
 
@@ -164,7 +164,7 @@
 				if(isset($_SESSION['test']))
 				{					
 					echo '<div class="text-danger">'.$_SESSION['test'].'</div>';
-					unset ($_SESSION['test']);
+					unset($_SESSION['test']);
 				}
 				?>
 		</div>

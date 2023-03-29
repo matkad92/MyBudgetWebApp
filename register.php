@@ -88,14 +88,25 @@
         $isEmailInDatabaseQuery->execute();
 
         $howManyUsersWithTheSameEmail = $isEmailInDatabaseQuery->rowCount();
-        if ($howManyUsersWithTheSameLogin > 0)
+        if ($howManyUsersWithTheSameEmail > 0)
         {
             $validRegister = false;
             $_SESSION['e_email'] = "Istnieje już użytkownik o podanym adresie e-mail";
         }
 
+        if($validRegister)
+        {
+            $insertUserQuery = $db->prepare('INSERT INTO users VALUES (NULL, :login, :password, :mail)') ;
+            $insertUserQuery->bindValue(':mail', $email, PDO::PARAM_STR);
+            $insertUserQuery->bindValue(':login', $userLogin, PDO::PARAM_STR);
+            $insertUserQuery->bindValue(':password', $passwordHash, PDO::PARAM_STR);
+            $insertUserQuery->execute();
+        }
+
         //testfield
         $_SESSION['test'] = $isLoginInDatabaseQuery->rowCount();
+
+
 
 
         header('Location: RWD_RegisterPage.php');
