@@ -94,6 +94,9 @@
             $_SESSION['e_email'] = "Istnieje już użytkownik o podanym adresie e-mail";
         }
 
+        // function copyDefaultCategories()
+        // {}
+
         if($validRegister)
         {
             $insertUserQuery = $db->prepare('INSERT INTO users VALUES (NULL, :login, :password, :mail)') ;
@@ -101,14 +104,61 @@
             $insertUserQuery->bindValue(':login', $userLogin, PDO::PARAM_STR);
             $insertUserQuery->bindValue(':password', $passwordHash, PDO::PARAM_STR);
             $insertUserQuery->execute();
+
+            
+
+            
         }
 
+        $registeredUserIdNumberQuery = $db->query('SELECT id FROM users ORDER BY id DESC Limit 1');
+        $registeredUserIdarr = $registeredUserIdNumberQuery->fetchAll();
+        $registeredUserId = $registeredUserIdarr[0]['id'];
+
+        $defaultIncomeQuery = $db->query('SELECT name FROM incomes_category_default');
+        $defaultIncomeArr = $defaultIncomeQuery->fetchAll();
+        //copying default Incomes to assigned to user incomes;
+        foreach($defaultIncomeArr as $income)
+        {
+            $name = $income['name'];
+            $db->query("INSERT INTO incomes_category_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            echo $income['name'];
+            echo "</br>";
+        }
+
+        $defaultExpenseQuery = $db->query('SELECT name FROM expenses_category_default');
+        $defaultExpensearr = $defaultExpenseQuery->fetchAll();
+        //copying expenses
+        foreach($defaultExpensearr as $expense)
+        {
+            $name = $expense['name'];
+            $db->query("INSERT INTO expenses_category_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            echo $expense['name'];
+            echo "</br>";
+        }
+
+        $defaultPaymentQuery = $db->query('SELECT name FROM payment_methods_default');
+        $defaultPaymentarr = $defaultPaymentQuery->fetchAll();
+        //copying expenses
+        foreach($defaultPaymentarr as $payment)
+        {
+            $name = $payment['name'];
+            $db->query("INSERT INTO payment_methods_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            echo $payment['name'];
+            echo "</br>";
+        }       
+
+
+        
+        
+        
+        echo $registeredUserId; echo "________";
+                        
         //testfield
-        $_SESSION['test'] = $isLoginInDatabaseQuery->rowCount();
+        $_SESSION['test'] = "test";
 
 
 
 
-        header('Location: RWD_RegisterPage.php');
+        //header('Location: RWD_RegisterPage.php');
 
     }
