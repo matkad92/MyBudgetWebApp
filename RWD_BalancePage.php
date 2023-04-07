@@ -1,3 +1,13 @@
+<?php
+
+	session_start();
+	if (!isset($_SESSION['loggedIn']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -22,6 +32,7 @@
 	
 	
 </head>
+
 
 <body>
 
@@ -64,7 +75,7 @@
 					  <a class="nav-link" href="#"><i class="icon-cog"></i> Ustawienia</a>
 					</li>  					
 					<li class="nav-item">
-					  <a class="nav-link" href="#"><i class="icon-logout"></i> Wyloguj</a>
+					  <a class="nav-link" href="logout.php"><i class="icon-logout"></i> Wyloguj</a>
 					</li>  
 				  </ul>
 				</div>
@@ -158,7 +169,16 @@
 				
 				<div style="clear: both"></div>
 			
-				<h2 class="logo"><i class="icon-balance-scale"></i> Bilans - wybrany okres </h2>
+				<h2 class="logo"><i class="icon-balance-scale"></i> 
+				<?php
+					if(isset($_SESSION['loggedInID']))
+					{
+						echo "Bilans dla ID : ".$_SESSION['loggedInID'];
+					}
+					else echo "Brak zalogowanego użytkownika!";				
+				?>
+			
+				</h2>
 			
 			
 			

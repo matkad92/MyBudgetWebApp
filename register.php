@@ -65,8 +65,91 @@
             $_SESSION['e_email'] = "Podaj poprawny adres e-mail!";
         }
 
+        //remember input
+        $_SESSION['input_login'] = $userLogin;
+        $_SESSION['input_email'] = $email;
+        $_SESSION['input_password'] = $password;
+        $_SESSION['input_password_conf'] = $passwordConfirmation;
+        //chcecking if login or email already exists in db
+        require_once 'database.php';
+        $isLoginInDatabaseQuery = $db->prepare('SELECT id FROM users WHERE username =:login');
+        $isLoginInDatabaseQuery->bindValue(':login', $userLogin, PDO::PARAM_STR);
+        $isLoginInDatabaseQuery->execute();
+
+        $howManyUsersWithTheSameLogin = $isLoginInDatabaseQuery->rowCount();
+        if ($howManyUsersWithTheSameLogin > 0)
+        {
+            $validRegister = false;
+            $_SESSION['e_nick'] = "Istnieje już użytkownik o podanym loginie";
+        }
+
+        $isEmailInDatabaseQuery = $db->prepare('SELECT id FROM users WHERE email =:mail');
+        $isEmailInDatabaseQuery->bindValue(':mail', $email, PDO::PARAM_STR);
+        $isEmailInDatabaseQuery->execute();
+
+        $howManyUsersWithTheSameEmail = $isEmailInDatabaseQuery->rowCount();
+        if ($howManyUsersWithTheSameEmail > 0)
+        {
+            $validRegister = false;
+            $_SESSION['e_email'] = "Istnieje już użytkownik o podanym adresie e-mail";
+        }
+
+
+
+        if($validRegister)
+        {
+            $insertUserQuery = $db->prepare('INSERT INTO users VALUES (NULL, :login, :password, :mail)') ;
+            $insertUserQuery->bindValue(':mail', $email, PDO::PARAM_STR);
+            $insertUserQuery->bindValue(':login', $userLogin, PDO::PARAM_STR);
+            $insertUserQuery->bindValue(':password', $passwordHash, PDO::PARAM_STR);
+            $insertUserQuery->execute();
+
+            $registeredUserIdNumberQuery = $db->query('SELECT id FROM users ORDER BY id DESC Limit 1');
+            $registeredUserIdarr = $registeredUserIdNumberQuery->fetchAll();
+            $registeredUserId = $registeredUserIdarr[0]['id'];
+    
+            $defaultIncomeQuery = $db->query('SELECT name FROM incomes_category_default');
+            $defaultIncomeArr = $defaultIncomeQuery->fetchAll();
+            //copying default Incomes to assigned to user incomes;
+            foreach($defaultIncomeArr as $income)
+            {
+                $name = $income['name'];
+                $db->query("INSERT INTO incomes_category_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            }
+    
+            $defaultExpenseQuery = $db->query('SELECT name FROM expenses_category_default');
+            $defaultExpensearr = $defaultExpenseQuery->fetchAll();
+            //copying expenses
+            foreach($defaultExpensearr as $expense)
+            {
+                $name = $expense['name'];
+                $db->query("INSERT INTO expenses_category_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            }
+    
+            $defaultPaymentQuery = $db->query('SELECT name FROM payment_methods_default');
+            $defaultPaymentarr = $defaultPaymentQuery->fetchAll();
+            //copying expenses
+            foreach($defaultPaymentarr as $payment)
+            {
+                $name = $payment['name'];
+                $db->query("INSERT INTO payment_methods_assigned_to_users VALUES (NULL, '$registeredUserId', '$name' )");
+            }    
+
+            header('Location: succedRegister.php');
+        }
+
+
         
+        //echo $registeredUserId;
+        //echo "</br>";
+                        
+        //testfield
+        //$_SESSION['test'] = "test";
 
+        if(!$validRegister) header('Location: RWD_RegisterPage.php');
+
+    }
+    else
+    {
         header('Location: RWD_RegisterPage.php');
-
     }

@@ -1,3 +1,13 @@
+<?php
+
+	session_start();
+	if (isset($_SESSION['loggedInID']))
+	{
+		header('Location: RWD_BalancePage.php');
+		exit();
+	}
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
