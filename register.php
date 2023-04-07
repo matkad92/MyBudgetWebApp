@@ -149,3 +149,7 @@
         if(!$validRegister) header('Location: RWD_RegisterPage.php');
 
     }
+    else
+    {
+        header('Location: RWD_RegisterPage.php');
+    }
